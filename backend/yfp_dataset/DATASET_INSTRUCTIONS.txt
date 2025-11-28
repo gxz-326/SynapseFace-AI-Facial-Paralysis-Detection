@@ -1,0 +1,21 @@
+# YFP Dataset Instructions
+
+This directory is for the YFP (Yang Facial Palsy) dataset.
+
+## Directory Structure:
+- normal/     - Place normal/healthy face images here
+- paralyzed/  - Place paralyzed face images here
+
+## Image Requirements:
+- Format: JPG, JPEG, or PNG
+- Clear frontal face views
+- Good lighting conditions
+- Minimal occlusions
+
+## After adding images:
+1. Run: python yfp_ensemble.py
+2. This will train and save the model as 'yfp_voting_classifier.joblib'
+3. The system will automatically use the new YFP-trained model
+
+## Current Status:
+Waiting for YFP dataset images to be added...

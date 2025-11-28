@@ -129,9 +129,8 @@ def mark_landmarks(img, landmarks):
     return marked_img
 
 def load_and_predict(img, output):
-    # Load the trained model
-    log_model = joblib.load('voting_classifier.joblib')
-#     log_model = joblib.load('backend/voting_classifier.joblib')
+    # Load the trained YFP model
+    log_model = joblib.load('yfp_voting_classifier.joblib')
 
     # Extract features from the image
     features = extract_features(img, output)

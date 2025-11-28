@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from model import process_image
+from model import process_image  # Now using YFP dataset model
 import numpy as np
 from PIL import Image
 import io
