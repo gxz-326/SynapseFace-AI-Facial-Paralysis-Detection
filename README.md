@@ -16,12 +16,23 @@ The project utilizes the following technologies:
    
 ## Data and Model Performance
 
-- **Dataset**: Included 2524 images; 208 were used for testing due to privacy concerns.
+- **Dataset**: Now configured for YFP (Yang Facial Palsy) dataset for improved facial paralysis detection
+- **Legacy Dataset**: Previously used 2524 images; 208 were used for testing due to privacy concerns
 - **Model Performance**:
-  - Accuracy: 88%
-  - F1 Score: 81%
-  - Precision: 85%
-  - Recall: 76%
+  - Accuracy: 88% (legacy dataset)
+  - F1 Score: 81% (legacy dataset)
+  - Precision: 85% (legacy dataset)
+  - Recall: 76% (legacy dataset)
+
+### YFP Dataset Integration
+
+The system has been updated to use the YFP facial paralysis dataset:
+- **Training Script**: `backend/yfp_ensemble.py` - Train new models with YFP data
+- **Dataset Structure**: 
+  - `yfp_dataset/normal/` - Healthy face images
+  - `yfp_dataset/paralyzed/` - Paralyzed face images
+- **Model File**: `yfp_voting_classifier.joblib` - YFP-trained model
+- **Legacy Model**: `voting_classifier.joblib` - Original dataset model
  
 ## User Interface
 
@@ -53,6 +64,7 @@ As the dataset was limited due to privacy concerns, expanding the dataset is cru
 2. Activate the virtual environment using . .venv/bin/activate
 3. Install the dependencies for the backend
 4. Go to the `frontend` directory and run npm i to install the dependencies.
+5. **YFP Dataset Setup**: Place your YFP dataset images in `backend/yfp_dataset/normal/` and `backend/yfp_dataset/paralyzed/` directories, then run `python yfp_ensemble.py` to train the YFP model.
 
 ## Getting Started
 
